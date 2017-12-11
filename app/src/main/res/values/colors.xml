@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF8F00</color>
+    <color name="colorPrimaryDark">#FF6F00</color>
+    <color name="colorAccent">#0d990d</color>
+
+    <color name="biru">#3375e0</color>
+    <color name="hijau">#3bbf2f</color>
+    <color name="merah">#e53256</color>
+    <color name="orange">#b79716</color>
+
+    <color name="dot_active">#161616</color>
+    <color name="dot_inactive">#cccccc</color>
+</resources>
