@@ -64,16 +64,16 @@ public class MainActivity extends AppCompatActivity implements InputFragment.kom
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                InputFragment inputFragment = new InputFragment();
-                getSupportFragmentManager().beginTransaction()
-                        .add(R.id.frame_container,inputFragment)
-                        .commit();
-                fab.hide();
+//                InputFragment inputFragment = new InputFragment();
+//                getSupportFragmentManager().beginTransaction()
+//                        .add(R.id.frame_container,inputFragment)
+//                        .commit();
+//                fab.hide();
 
                 // Start NewActivity.class
-//                Intent myIntent = new Intent(MainActivity.this,
-//                        InputActivity.class);
-//                startActivity(myIntent);
+                Intent myIntent = new Intent(MainActivity.this,
+                        InputActivity.class);
+                startActivity(myIntent);
             }
         });
     }

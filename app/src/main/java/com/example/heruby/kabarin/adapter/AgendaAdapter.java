@@ -31,7 +31,7 @@ public class AgendaAdapter extends RecyclerView.Adapter<AgendaAdapter.ProductVie
     @Override
     public ProductViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.list_layout, null);
+        View view = inflater.inflate(R.layout.list_layout, parent,false);
         ProductViewHolder holder = new ProductViewHolder(view);
         return new ProductViewHolder(view);
     }
