@@ -6,22 +6,20 @@ package com.example.heruby.kabarin.model;
 
 public class Agenda {
 
-    private int id;
+
     private String title, shortdesc;
     private String date;
-    private int image;
 
-    public Agenda(int id, String title, String shortdesc, String date, int image) {
-        this.id = id;
+
+    public Agenda(String title, String shortdesc, String date) {
+
         this.title = title;
         this.shortdesc = shortdesc;
         this.date = date;
-        this.image = image;
+
     }
 
-    public int getId() {
-        return id;
-    }
+
 
     public String getTitle() {
         return title;
@@ -35,7 +33,5 @@ public class Agenda {
         return date;
     }
 
-    public int getImage() {
-        return image;
-    }
+
 }

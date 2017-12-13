@@ -60,7 +60,7 @@ public class AgendaAdapter extends RecyclerView.Adapter<AgendaAdapter.ProductVie
         public ProductViewHolder(View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.imageView);
+            //imageView = itemView.findViewById(R.id.imageView);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewDesc = itemView.findViewById(R.id.textViewShortDesc);
             textViewDate = itemView.findViewById(R.id.textViewDate);
