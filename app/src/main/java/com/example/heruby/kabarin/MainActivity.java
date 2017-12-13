@@ -7,15 +7,42 @@ import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.heruby.kabarin.adapter.AgendaAdapter;
+import com.example.heruby.kabarin.model.Agenda;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements InputFragment.komunikasiFragment{
+
+    RecyclerView recyclerView;
+    AgendaAdapter adapter;
+    LayoutInflater layoutInflater;
+
+    List<Agenda> productList;
+    String label = "",detail="",time="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        productList = new ArrayList<>();
+
+        recyclerView =findViewById(R.id.recyclerView);
+        layoutInflater = getLayoutInflater();
+
+        adapter = new AgendaAdapter(getApplicationContext(), productList);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        cekData();
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -34,14 +61,46 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                InputFragment inputFragment = new InputFragment();
+//                getSupportFragmentManager().beginTransaction()
+//                        .add(R.id.frame_container,inputFragment)
+//                        .commit();
+//                fab.hide();
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(MainActivity.this,
+                        InputActivity.class);
+                startActivity(myIntent);
             }
         });
     }
 
+    @Override
+    public void kirimData(String label, String detail, String date) {
+        this.label = label;
+        this.detail = detail;
+        this.time = time;
+    }
+
+    @Override
+    public String getLabel() {
+        return label;
+    }
+
+    @Override
+    public String getDetail() {
+        return detail;
+    }
+
+    @Override
+    public String getTime() {
+        return time;
+    }
+    public void cekData(){
+        Agenda agenda = new Agenda("Project Akhir PAPB", "coba coba", "1234");
+        productList.add(agenda);
+    }
 }

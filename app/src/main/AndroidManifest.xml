@@ -17,7 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".IntroActivity"></activity>
+<<<<<<< HEAD
         <activity android:name=".MainActivity"></activity>
+=======
+        <activity android:name=".InputActivity"></activity>
+>>>>>>> bc2c4c83938b00c0856c1aec8d10cd890ed558ca
     </application>
 
 </manifest>
